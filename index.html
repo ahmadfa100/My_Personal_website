@@ -21,9 +21,6 @@
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/sections.css" />
-
-  <!-- Theme: synchronous, must run before body renders -->
-  <script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -52,14 +49,6 @@
     </ul>
 
     <div class="nav-controls">
-      <button class="theme-pill" id="themeBtn" aria-label="Toggle dark / light mode">
-        <span class="pill-icon pill-moon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </span>
-        <span class="pill-icon pill-sun">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </span>
-      </button>
       <button id="menuBtn"  aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -327,61 +316,114 @@
         <h2>Experience</h2>
       </div>
 
-      <div class="timeline">
+      <div class="exp-list">
 
-        <div class="timeline-item reveal">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-role">Full Stack ASP.NET Developer</div>
-              <div class="timeline-company">Qualify You — Bootcamp</div>
-            </div>
-            <div class="timeline-date">Sep 2025 – Jan 2026</div>
+        <!-- Qualify You -->
+        <div class="exp-item reveal">
+          <div class="exp-line">
+            <div class="exp-dot latest"></div>
+            <div class="exp-connector"></div>
           </div>
-          <div class="timeline-body">
-            <ul>
-              <li>Participated from the earliest stages of system design and development of a real-time interactive web application using ASP.NET Web API and React.js.</li>
+          <div class="exp-card">
+            <div class="exp-hd">
+              <div>
+                <div class="exp-title">Full Stack ASP.NET Developer</div>
+                <a href="https://www.qualifyyou.com/" target="_blank" class="exp-company-link">
+                  <div class="exp-company-logo">
+                    <img src="./assets/Company_Logos/Qualify_you.svg" alt="Qualify You logo"
+                         onerror="this.parentElement.innerHTML='<i class=\'fas fa-building\' style=\'font-size:14px;color:var(--accent)\'></i>'">
+                  </div>
+                  <span class="exp-company-name">Qualify You</span>
+                  <i class="fas fa-arrow-up-right-from-square exp-company-ext"></i>
+                </a>
+              </div>
+              <div class="exp-date">Sep 2025 – Jan 2026</div>
+            </div>
+            <ul class="exp-pts">
+              <li>Participated from the earliest stages of system design for a real-time interactive web application using ASP.NET Web API and React.js.</li>
               <li>Contributed to backend architecture, API design, and seamless frontend–backend integration.</li>
-              <li>Implemented real-time features and ensured application scalability and responsiveness.</li>
-              <li>Led the development team during the final phase — coordinated task delivery and ensured successful project completion.</li>
+              <li>Implemented real-time features ensuring application scalability and responsiveness.</li>
+              <li>Led the development team in the final phase, coordinating task delivery and ensuring successful project completion.</li>
             </ul>
+            <div class="tech-row">
+              <span class="tech-tag">ASP.NET Web API</span>
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">WebSockets</span>
+              <span class="tech-tag">REST APIs</span>
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-role">Web Development Trainee</div>
-              <div class="timeline-company">Clever Mind POB</div>
-            </div>
-            <div class="timeline-date">Jun 2024 – Sep 2024</div>
+        <!-- Clever Mind POB -->
+        <div class="exp-item reveal">
+          <div class="exp-line">
+            <div class="exp-dot"></div>
+            <div class="exp-connector"></div>
           </div>
-          <div class="timeline-body">
-            <ul>
+          <div class="exp-card">
+            <div class="exp-hd">
+              <div>
+                <div class="exp-title">Web Development Trainee</div>
+                <a href="https://www.clevermindpob.org/" target="_blank" class="exp-company-link">
+                  <div class="exp-company-logo">
+                    <img src="./assets/Company_Logos/CleverMindPos.png" alt="Clever Mind POB logo"
+                         onerror="this.parentElement.innerHTML='<i class=\'fas fa-building\' style=\'font-size:14px;color:var(--accent)\'></i>'">
+                  </div>
+                  <span class="exp-company-name">Clever Mind POB</span>
+                  <i class="fas fa-arrow-up-right-from-square exp-company-ext"></i>
+                </a>
+              </div>
+              <div class="exp-date">Jun 2024 – Sep 2024</div>
+            </div>
+            <ul class="exp-pts">
               <li>Developed and implemented multiple web projects, strengthening proficiency in HTML, CSS, and JavaScript.</li>
-              <li>Modified and optimized 3+ existing projects, reinforcing university concepts in real-world scenarios.</li>
-              <li>Analyzed official documentation and technical specifications to implement features accurately.</li>
-              <li>Built a complete web project from scratch — planning, design, development, and deployment.</li>
+              <li>Modified and optimized 3+ existing projects, reinforcing university-taught concepts in real-world scenarios.</li>
+              <li>Built a complete web project from scratch covering planning, design, development, and deployment.</li>
             </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-role">CCNA Level 1 Trainee</div>
-              <div class="timeline-company">CTS — Volunteer</div>
+            <div class="tech-row">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Git</span>
             </div>
-            <div class="timeline-date">Jul 2022 – Oct 2022</div>
-          </div>
-          <div class="timeline-body">
-            <ul>
-              <li>Completed intensive CCNA Level 1 training with hands-on labs covering OSI/TCP-IP, IP addressing, subnetting, VLANs, switching, and basic routing.</li>
-              <li>Configured Cisco network devices and performed server tasks including OS installation and DHCP/DNS setup.</li>
-            </ul>
           </div>
         </div>
 
-      </div><!-- /.timeline -->
+        <!-- CTS -->
+        <div class="exp-item reveal">
+          <div class="exp-line">
+            <div class="exp-dot"></div>
+            <div class="exp-connector" style="min-height:0;flex:0"></div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-hd">
+              <div>
+                <div class="exp-title">Volunteer / CCNA Level 1 Trainee</div>
+                <a href="https://ctsjordan.com/" target="_blank" class="exp-company-link">
+                  <div class="exp-company-logo">
+                    <img src="./assets/Company_Logos/CTS.png" alt="CTS logo"
+                         onerror="this.parentElement.innerHTML='<i class=\'fas fa-network-wired\' style=\'font-size:14px;color:var(--accent)\'></i>'">
+                  </div>
+                  <span class="exp-company-name">CTS</span>
+                  <i class="fas fa-arrow-up-right-from-square exp-company-ext"></i>
+                </a>
+              </div>
+              <div class="exp-date">Jul 2022 – Oct 2022</div>
+            </div>
+            <ul class="exp-pts">
+              <li>Completed intensive CCNA Level 1 training covering OSI/TCP-IP, IP addressing, subnetting, VLANs, switching, and basic routing.</li>
+              <li>Configured and managed Cisco network devices; performed OS installation and DHCP/DNS setup.</li>
+            </ul>
+            <div class="tech-row">
+              <span class="tech-tag">Cisco</span>
+              <span class="tech-tag">Networking</span>
+              <span class="tech-tag">CCNA</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -395,24 +437,21 @@
 
       <div class="pg-grid reveal">
 
-        <!-- ① Green Bridge — featured -->
-        <div class="pg-card featured" data-tags="react node">
+        <!-- ② Green Bridge -->
+        <div class="pg-card reveal">
+          <div class="pg-img-wrap">
+            <img src="./assets/Projects/GreenBridge.jpg" alt="Green Bridge" class="pg-img"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="pg-placeholder" style="display:none"><i class="fas fa-leaf"></i></div>
+          </div>
           <div class="pg-body">
             <div class="pg-top">
-              <div class="pg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 12 2l10 20"/><path d="M12 2v20"/></svg></div>
+              <div class="pg-icon"><i class="fas fa-leaf"></i></div>
               <span class="pg-year">2025</span>
             </div>
             <div class="pg-title">Green Bridge</div>
             <p class="pg-desc">Platform connecting landowners with skilled farmers for sustainable agricultural partnerships, with real-time chat, contract signing, order management, and weather-driven alerts.</p>
             <div class="pg-features">
-              <div class="pg-feat"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Farmer-Landowner Matching</span></div>
-              <div class="pg-feat"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg><span>Contract Management</span></div>
-              <div class="pg-feat"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span>Resource Optimization</span></div>
-            </div>
-            <div class="pg-stack">
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">Express</span>
               <span class="tag">WebSockets</span>
               <span class="tag">PostgreSQL</span>
             </div>
