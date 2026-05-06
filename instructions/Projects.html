@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Ahmad Faisal</title>
+  <link rel="icon" href="./images/batman logo.jpeg" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="./css/background.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    /* ── Projects page extras ─────────────────────── */
+
+    /* Page header */
+    .pg-header {
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      transition: border-color var(--tt);
+    }
+    .pg-header h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(22px, 4vw, 34px);
+      letter-spacing: -.03em;
+      color: var(--text);
+      margin-bottom: 6px;
+      transition: color var(--tt);
+    }
+    .pg-header h1 em { color: var(--accent); font-style: normal; }
+    .pg-header p { font-size: 13px; color: var(--text2); transition: color var(--tt); }
+
+    /* Filter pills */
+    .filter-row { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 28px; }
+    .filter-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      padding: 5px 14px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      cursor: pointer;
+      transition: background .18s, border-color .18s, color .18s;
+      letter-spacing: .04em;
+    }
+    .filter-btn:hover { color: var(--text); border-color: var(--border-h); background: var(--glow); }
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* Project grid — 2 cols, full-width featured */
+    .pg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Each card */
+    .pg-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: border-color .22s, transform .22s, box-shadow .22s, background var(--tt);
+    }
+    .pg-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0; transition: opacity .22s;
+    }
+    .pg-card:hover { border-color: var(--border-h); transform: translateY(-4px); box-shadow: 0 18px 52px rgba(0,0,0,.30); }
+    .pg-card:hover::before { opacity: 1; }
+
+    /* Hidden extra projects */
+    .pg-card.extra { display: none; }
+    .pg-card.extra.visible { display: flex; }
+
+    /* Featured card spans full width */
+    .pg-card.featured { grid-column: span 2; display: grid; grid-template-columns: 1.2fr .8fr; }
+    .pg-card.featured .pg-img-wrap { height: 100%; }
+    .pg-card.featured .pg-img { height: 100%; }
+
+    /* Image area */
+    .pg-img-wrap { overflow: hidden; flex-shrink: 0; }
+    .pg-img {
+      width: 100%; height: 160px;
+      object-fit: cover; display: block;
+      background: var(--card);
+      transition: transform .45s ease;
+    }
+    .pg-card:hover .pg-img { transform: scale(1.05); }
+
+    .pg-placeholder {
+      width: 100%; height: 160px;
+      background: linear-gradient(135deg, var(--bg), var(--card));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; color: var(--border-h);
+    }
+    .pg-card.featured .pg-placeholder { height: 100%; }
+
+    /* Body */
+    .pg-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+
+    .pg-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+    .pg-icon {
+      width: 32px; height: 32px;
+      background: var(--glow);
+      border: 1px solid var(--border-h);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .pg-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; color: var(--muted);
+    }
+
+    /* Company badge with logo */
+    .pg-company {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--glow);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 9px 3px 5px;
+      text-decoration: none;
+      transition: border-color .18s, background .18s;
+    }
+    .pg-company:hover { border-color: var(--border-h); background: rgba(99,179,237,.12); }
+    .pg-company img {
+      width: 16px; height: 16px;
+      border-radius: 3px;
+      object-fit: contain;
+    }
+    .pg-company-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .pg-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--text);
+      transition: color var(--tt);
+    }
+    .pg-desc { font-size: 12.5px; color: var(--text2); line-height: 1.68; }
+
+    .pg-features {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .pg-feat {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11.5px; color: var(--text2);
+    }
+    .pg-feat i {
+      font-size: 11px; color: var(--accent);
+      width: 14px; text-align: center;
+    }
+
+    .pg-stack { display: flex; flex-wrap: wrap; gap: 4px; }
+
+    .pg-actions { display: flex; gap: 8px; margin-top: auto; padding-top: 4px; }
+
+    /* Show More button */
+    .show-more-wrap { display: flex; justify-content: center; margin-top: 22px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .pg-grid { grid-template-columns: 1fr; }
+      .pg-card.featured { grid-column: span 1; display: flex; flex-direction: column; }
+      .pg-card.featured .pg-img-wrap { height: auto; }
+      .pg-card.featured .pg-img { height: 160px; }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="network"></canvas>
+
+  <!-- ══ NAV ══ -->
+  <nav>
+    <a href="index.html" class="nav-brand-logo" aria-label="Ahmad Faisal — Home">
+      <div class="nav-af-ring"></div>
+      <div class="nav-af-inner">AF</div>
+    </a>
+
+    <div class="nav-clock">
+      <span class="nav-clock-icon"><i class="fas fa-clock"></i></span>
+      <span class="nav-clock-time" id="nav-clock-time">
+        00<span class="nav-clock-colon">:</span>00<span class="nav-clock-colon">:</span>00
+      </span>
+      <span class="nav-clock-sep">·</span>
+      <span class="nav-clock-date" id="nav-clock-date"></span>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#experience">Work</a>
+      <a href="index.html#contact">Contact</a>
+      <button class="theme-pill" id="themeBtn" aria-label="Toggle theme">
+        <span class="pill-icon pill-moon"><i class="fas fa-moon"></i></span>
+        <span class="pill-icon pill-sun"><i class="fas fa-sun"></i></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- Page header -->
+    <div class="pg-header fu">
+      <h1>My <em>Projects</em></h1>
+      <p>A collection of my most impactful work — from full-stack platforms to games and AI-powered tools.</p>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-row fu">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="react">React</button>
+      <button class="filter-btn" data-filter="aspnet">ASP.NET</button>
+      <button class="filter-btn" data-filter="node">Node.js</button>
+      <button class="filter-btn" data-filter="java">Java</button>
+      <button class="filter-btn" data-filter="html">HTML / JS</button>
+    </div>
+
+    <!-- ══ PROJECTS GRID ══ -->
+    <div class="pg-grid fu" id="pg-grid">
+
+      <!-- ① Lightsek — featured -->
+      <div class="pg-card featured" data-tags="react aspnet">
+        <div class="pg-body">
+          <div class="pg-top">
+            <div class="pg-icon"><i class="fas fa-bolt"></i></div>
+            <span class="pg-year">2025</span>
+          </div>
+          <div class="pg-title">Lightsek</div>
+          <p class="pg-desc">Smart real-time task management platform centralizing team workspaces, boards, and task lifecycles. Features user management, threaded comments, and instant notifications.</p>
+          <div class="pg-features">
+            <div class="pg-feat"><i class="fas fa-layer-group"></i><span>Workspace & Board Management</span></div>
+            <div class="pg-feat"><i class="fas fa-comment-dots"></i><span>Threaded Comments</span></div>
+            <div class="pg-feat"><i class="fas fa-bell"></i><span>Real-time Notifications</span></div>
+          </div>
+          <div class="pg-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">ASP.NET Web API</span>
+            <span class="tech-tag">Clean Architecture</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">SignalR</span>
+          </div>
+          <div class="pg-actions">
+            <a href="#" class="bx out"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+        <div class="pg-img-wrap">
+          <img src="./Projects/Lightsek.png" alt="Lightsek" class="pg-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pg-placeholder" style="display:none"><i class="fas fa-bolt"></i></div>
+        </div>
+      </div>
+
+      <!-- ② Green Bridge -->
+      <div class="pg-card" data-tags="react node">
+        <div class="pg-img-wrap">
+          <img src="./Projects/Green Bridge.png" alt="Green Bridge" class="pg-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pg-placeholder" style="display:none"><i class="fas fa-leaf"></i></div>
+        </div>
+        <div class="pg-body">
+          <div class="pg-top">
+            <div class="pg-icon"><i class="fas fa-leaf"></i></div>
+            <span class="pg-year">2025</span>
+          </div>
+          <div class="pg-title">Green Bridge</div>
+          <p class="pg-desc">Platform connecting landowners with skilled farmers for sustainable agricultural partnerships, with real-time chat, contract signing, order management, and weather-driven alerts.</p>
+          <div class="pg-features">
+            <div class="pg-feat"><i class="fas fa-users"></i><span>Farmer-Landowner Matching</span></div>
+            <div class="pg-feat"><i class="fas fa-file-contract"></i><span>Contract Management</span></div>
+            <div class="pg-feat"><i class="fas fa-chart-line"></i><span>Resource Optimization</span></div>
+          </div>
+          <div class="pg-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">WebSockets</span>
+            <span class="tech-tag">PostgreSQL</span>
+          </div>
+          <div class="pg-actions">
+            <a href="https://github.com/ahmadfa100/graduation-project-2" target="_blank" class="bx solid">
+              <i class="fab fa-github"></i> Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ③ MedBock -->
+      <div class="pg-card" data-tags="aspnet">
+        <div class="pg-img-wrap">
+          <img src="./Projects/MedBook.png" alt="MedBock" class="pg-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pg-placeholder" style="display:none"><i class="fas fa-hospital"></i></div>
+        </div>
+        <div class="pg-body">
+          <div class="pg-top">
+            <div class="pg-icon"><i class="fas fa-hospital"></i></div>
+            <span class="pg-year">2025</span>
+          </div>
+          <div class="pg-title">MedBock</div>
+          <p class="pg-desc">Integrated scheduling platform for patients, nurses, and doctors. Covers user registration, appointment booking, request and notification management, and device time allocation.</p>
+          <div class="pg-features">
+            <div class="pg-feat"><i class="fas fa-clock"></i><span>Smart Scheduling</span></div>
+            <div class="pg-feat"><i class="fas fa-bell"></i><span>Automated Reminders</span></div>
+            <div class="pg-feat"><i class="fas fa-user-md"></i><span>Provider Coordination</span></div>
+          </div>
+          <div class="pg-stack">
+            <span class="tech-tag">ASP.NET Core MVC</span>
+            <span class="tech-tag">C#</span>
+            <span class="tech-tag">SQL Server</span>
+            <span class="tech-tag">Bootstrap</span>
+          </div>
+          <div class="pg-actions">
+            <a href="#" class="bx out"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ④ Bus Ticket System -->
+      <div class="pg-card" data-tags="java">
+        <div class="pg-img-wrap">
+          <img src="./Projects/Bus Ticket system.png" alt="Bus Ticket System" class="pg-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pg-placeholder" style="display:none"><i class="fas fa-bus"></i></div>
+        </div>
+        <div class="pg-body">
+          <div class="pg-top">
+            <div class="pg-icon"><i class="fas fa-bus"></i></div>
+            <span class="pg-year">2025</span>
+          </div>
+          <div class="pg-title">Bus Ticket System</div>
+          <p class="pg-desc">Comprehensive bus ticketing platform supporting multiple user roles and discount schemes, featuring an admin dashboard for ticket creation, fare calculation, booking and viewing past trips.</p>
+          <div class="pg-features">
+            <div class="pg-feat"><i class="fas fa-map-marker-alt"></i><span>Real-time Tracking</span></div>
+            <div class="pg-feat"><i class="fas fa-ticket-alt"></i><span>Digital Tickets</span></div>
+            <div class="pg-feat"><i class="fas fa-credit-card"></i><span>Secure Payments</span></div>
+          </div>
+          <div class="pg-stack">
+            <span class="tech-tag">Java SE</span>
+            <span class="tech-tag">JSP / Servlets</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Maven</span>
+            <span class="tech-tag">Bootstrap</span>
+          </div>
+          <div class="pg-actions">
+            <a href="https://github.com/ahmadfa100/Online-Bus-Ticketing-System" target="_blank" class="bx solid">
+              <i class="fab fa-github"></i> Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑤ PlayNexa — visible by default -->
+      <div class="pg-card" data-tags="html">
+        <div class="pg-img-wrap">
+          <img src="./Projects/Playneax logo.png" alt="PlayNexa" class="pg-img"
+               style="object-fit:contain;background:#0a0e1a;padding:16px"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pg-placeholder" style="display:none"><i class="fas fa-gamepad"></i></div>
+        </div>
+        <div class="pg-body">
+          <div class="pg-top">
+            <div class="pg-icon"><i class="fas fa-gamepad"></i></div>
+            <span class="pg-year">2025</span>
+          </div>
+          <div class="pg-title">PlayNexa</div>
+          <p class="pg-desc">A lightning-fast, zero-dependency web platform for classic and rare HTML5 browser games. Built with a responsive dark-mode UI and designed to bypass strict iframe restrictions using raw file hosting.</p>
+          <div class="pg-features">
+            <div class="pg-feat"><i class="fas fa-bolt"></i><span>Zero-dependency Architecture</span></div>
+            <div class="pg-feat"><i class="fas fa-moon"></i><span>Responsive Dark-mode UI</span></div>
+            <div class="pg-feat"><i class="fas fa-gamepad"></i><span>Classic & Rare HTML5 Games</span></div>
+          </div>
+          <div class="pg-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Netlify</span>
+          </div>
+          <div class="pg-actions">
+            <a href="https://playnexa.netlify.app/" target="_blank" class="bx solid">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑥ UniMind — shown after "View more" click -->
+      <div class="pg-card extra" data-tags="html">
+        <div class="pg-img-wrap">
+          <img src="./Projects/UniMind_Logo.png" alt="UniMind" class="pg-img"
+               style="object-fit:contain;background:#0a0e1a;padding:16px"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pg-placeholder" style="display:none"><i class="fas fa-brain"></i></div>
+        </div>
+        <div class="pg-body">
+          <div class="pg-top">
+            <div class="pg-icon"><i class="fas fa-brain"></i></div>
+            <span class="pg-year">2025</span>
+          </div>
+          <div class="pg-title">UniMind</div>
+          <p class="pg-desc">University life is one of the most demanding chapters a person can experience — academically, emotionally, and socially. UniMind provides students consistent access to counseling, structured study tools, and check-ins on their wellbeing.</p>
+          <div class="pg-features">
+            <div class="pg-feat"><i class="fas fa-heart"></i><span>Mental Wellbeing Support</span></div>
+            <div class="pg-feat"><i class="fas fa-book-open"></i><span>Structured Study Tools</span></div>
+            <div class="pg-feat"><i class="fas fa-comments"></i><span>Peer & Counseling Access</span></div>
+          </div>
+          <div class="pg-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Netlify</span>
+          </div>
+          <div class="pg-actions">
+            <a href="https://unimind-landing-page.netlify.app/" target="_blank" class="bx solid">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /pg-grid -->
+
+    <!-- Show More button -->
+    <div class="show-more-wrap">
+      <button class="btn btn-ghost" id="showMoreBtn">
+        <i class="fas fa-plus"></i> View more projects
+      </button>
+    </div>
+
+    <footer>
+      <p>© <span id="footer-year"></span> Ahmad Faisal bani Hamad</p>
+      <p><a href="index.html">← Back to portfolio</a></p>
+    </footer>
+  </div>
+
+  <script src="./background.js"></script>
+  <script>
+    /* ── Filter ── */
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    var allCards   = document.querySelectorAll('#pg-grid .pg-card');
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        var f = btn.dataset.filter;
+        allCards.forEach(function (card) {
+          var tags    = card.dataset.tags || '';
+          var matches = f === 'all' || tags.includes(f);
+          /* Respect the extra/visible state */
+          if (!matches) {
+            card.style.display = 'none';
+          } else {
+            /* Only show extra cards if already revealed */
+            if (card.classList.contains('extra') && !card.classList.contains('visible')) {
+              card.style.display = 'none';
+            } else {
+              card.style.display = '';
+            }
+          }
+        });
+      });
+    });
+
+    /* ── Show More / Show Less ── */
+    var showMoreBtn  = document.getElementById('showMoreBtn');
+    var extraCards   = document.querySelectorAll('.pg-card.extra');
+    var expanded     = false;
+
+    showMoreBtn.addEventListener('click', function () {
+      expanded = !expanded;
+
+      extraCards.forEach(function (card) {
+        if (expanded) {
+          card.classList.add('visible');
+          /* Animate in */
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(18px)';
+          setTimeout(function () {
+            card.style.transition = 'opacity .45s ease, transform .45s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 20);
+        } else {
+          card.style.transition = 'opacity .3s ease, transform .3s ease';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(18px)';
+          setTimeout(function () {
+            card.classList.remove('visible');
+            card.style.transition = '';
+            card.style.opacity = '';
+            card.style.transform = '';
+          }, 320);
+        }
+      });
+
+      showMoreBtn.innerHTML = expanded
+        ? '<i class="fas fa-minus"></i> Show fewer projects'
+        : '<i class="fas fa-plus"></i> View more projects';
+    });
+  </script>
+</body>
+</html>
