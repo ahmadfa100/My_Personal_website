@@ -16,8 +16,7 @@
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/sections.css" />
-
-  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/loader.css" />
 
   <style>
     /* ── Projects page extras ─────────────────────── */
@@ -195,10 +194,23 @@
 </head>
 
 <body>
+
+<!-- ══ PRELOADER ══ -->
+<div id="preloader">
+  <div class="loader-content">
+    <div class="loader-logo">
+      <div class="loader-ring"></div>
+      <div class="loader-initials">AF</div>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+</div>
   <canvas id="network"></canvas>
 
   <!-- ══ NAV ══ -->
-  <nav>
+  <nav id="navbar">
     <a href="index.html" class="nav-brand-logo" aria-label="Ahmad Faisal — Home">
       <div class="nav-af-ring"></div>
       <div class="nav-af-inner">AF</div>
@@ -264,7 +276,6 @@
           <div class="pg-stack">
             <span class="tech-tag">React</span>
             <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Express</span>
             <span class="tech-tag">WebSockets</span>
             <span class="tech-tag">PostgreSQL</span>
           </div>
@@ -557,5 +568,8 @@
         : '<i class="fas fa-plus"></i> View more projects';
     });
   </script>
+  <script src="js/background.js" defer></script>
+  <script src="js/nav.js"        defer></script>
+  <script src="js/main.js"       defer></script>
 </body>
 </html>

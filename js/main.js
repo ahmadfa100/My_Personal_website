@@ -31,4 +31,16 @@
     });
   }
 
+  /* ── Preloader ── */
+  window.addEventListener('load', function () {
+    var preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.classList.add('loaded');
+      /* Optional: remove from DOM after transition */
+      setTimeout(function() {
+        preloader.style.display = 'none';
+      }, 1000);
+    }
+  });
+
 }());

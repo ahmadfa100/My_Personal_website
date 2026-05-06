@@ -10,7 +10,6 @@
   'use strict';
 
   var navbar    = document.getElementById('navbar');
-  var themeBtn  = document.getElementById('themeBtn');
   var menuBtn   = document.getElementById('menuBtn');
   var mobileMenu = document.getElementById('mobileMenu');
   var navLinks  = document.querySelectorAll('.nav-links a, #mobileMenu a[data-section]');
@@ -48,23 +47,7 @@
     });
   }
 
-  /* ── Theme toggle ─────────────────── */
-  function syncThemeIcon() {
-    if (!themeBtn) return;
-    var dark = document.documentElement.getAttribute('data-theme') !== 'light';
-    themeBtn.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
-  }
 
-  if (themeBtn) {
-    syncThemeIcon();
-    themeBtn.addEventListener('click', function () {
-      var current = document.documentElement.getAttribute('data-theme');
-      var next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('af-theme', next);
-      syncThemeIcon();
-    });
-  }
 
   /* ── Mobile menu ──────────────────── */
   if (menuBtn && mobileMenu) {
