@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════
+   base.css — Reset + Typography + Globals
+═══════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+/* ── Canvas background ────────────── */
+#network {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* ── Page wrapper ─────────────────── */
+#page {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Container ────────────────────── */
+.container {
+  width: min(var(--max-w), 100% - 2 * var(--gap));
+  margin-inline: auto;
+}
+
+/* ── Section base ─────────────────── */
+section {
+  padding-block: var(--section-pad);
+}
+
+/* ── Headings ─────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ── Section title ────────────────── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text);
+  margin-bottom: clamp(36px, 6vw, 56px);
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+/* ── Divider ──────────────────────── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(36px, 6vw, 56px);
+}
+
+.section-divider h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  white-space: nowrap;
+}
+
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border), transparent);
+}
+
+/* ── Cards ────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(20px, 3vw, 32px);
+  backdrop-filter: blur(8px);
+  transition: background var(--dur) var(--ease),
+              border-color var(--dur) var(--ease),
+              transform var(--dur) var(--ease),
+              box-shadow var(--dur) var(--ease);
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+/* ── Tags / Pills ─────────────────── */
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--accent-glow);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: background var(--dur), border-color var(--dur), color var(--dur);
+}
+
+.tag:hover {
+  background: rgba(99, 179, 237, 0.22);
+  border-color: var(--accent);
+}
+
+/* ── Accent line ──────────────────── */
+.accent-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 20px;
+}
+
+/* ── Links ────────────────────────── */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--dur);
+}
+
+a:hover { color: var(--accent-2); }
+
+/* ── Scroll reveal ────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Selection ────────────────────── */
+::selection {
+  background: rgba(99, 179, 237, 0.25);
+  color: var(--text);
+}
+
+/* ── Scrollbar ────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── Footer ───────────────────────── */
+footer {
+  text-align: center;
+  padding: 32px var(--gap);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border);
+}
+
+footer a { color: var(--text-muted); }
+footer a:hover { color: var(--accent); }

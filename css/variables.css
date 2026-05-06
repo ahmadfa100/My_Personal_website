@@ -1,0 +1,61 @@
+/* ═══════════════════════════════════════
+   variables.css — Design Tokens
+═══════════════════════════════════════ */
+
+:root {
+  /* ── Brand palette ────────────────── */
+  --bg:           #002451;
+  --bg-deep:      #001733;
+  --bg-card:      rgba(255, 255, 255, 0.04);
+  --bg-card-hover:rgba(255, 255, 255, 0.07);
+  --border:       rgba(99, 179, 237, 0.15);
+  --border-hover: rgba(99, 179, 237, 0.35);
+
+  --accent:       #63B3ED;
+  --accent-2:     #76E4F7;
+  --accent-glow:  rgba(99, 179, 237, 0.18);
+
+  --text:         #EBF4FF;
+  --text-muted:   #8BB8D4;
+  --text-dim:     #5A8BAA;
+
+  /* ── Typography ───────────────────── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Spacing ──────────────────────── */
+  --section-pad:  clamp(60px, 10vh, 110px);
+  --max-w:        1100px;
+  --gap:          clamp(16px, 2.5vw, 28px);
+
+  /* ── Motion ───────────────────────── */
+  --ease:         cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:     cubic-bezier(0.0, 0.0, 0.2, 1);
+  --dur:          0.35s;
+
+  /* ── Shadows ──────────────────────── */
+  --shadow-card:  0 4px 32px rgba(0, 0, 0, 0.3);
+  --shadow-glow:  0 0 32px rgba(99, 179, 237, 0.12);
+}
+
+/* ── Light theme overrides ─────────── */
+[data-theme="light"] {
+  --bg:           #F0F6FF;
+  --bg-deep:      #E2EDFC;
+  --bg-card:      rgba(0, 36, 81, 0.04);
+  --bg-card-hover:rgba(0, 36, 81, 0.07);
+  --border:       rgba(0, 36, 81, 0.12);
+  --border-hover: rgba(0, 36, 81, 0.30);
+
+  --accent:       #1E5A8E;
+  --accent-2:     #0F7A9D;
+  --accent-glow:  rgba(30, 90, 142, 0.12);
+
+  --text:         #041C38;
+  --text-muted:   #3A6A8E;
+  --text-dim:     #7AA8C5;
+
+  --shadow-card:  0 4px 32px rgba(0, 36, 81, 0.10);
+  --shadow-glow:  0 0 32px rgba(30, 90, 142, 0.08);
+}
