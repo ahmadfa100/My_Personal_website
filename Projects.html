@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects — Ahmad Faisal</title>
-    <link rel="icon" href="./assets/Ahmad.png" type="image/png">
+    <link rel="icon" href="./assets/Icon_tab.webp" type="image/webp" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -655,26 +655,35 @@
     <canvas id="network"></canvas>
 
     <!-- ══ NAV ══ -->
-    <nav id="navbar">
-        <a href="index.html" class="nav-brand-logo" aria-label="Ahmad Faisal — Home">
-            <div class="nav-af-ring"></div>
-            <div class="nav-af-inner">AF</div>
-        </a>
-        <div class="nav-clock">
-            <span class="nav-clock-icon"><i class="fas fa-clock"></i></span>
-            <span class="nav-clock-time" id="nav-clock-time">
-                00<span class="nav-clock-colon">:</span>00<span class="nav-clock-colon">:</span>00
-            </span>
-            <span class="nav-clock-sep">·</span>
-            <span class="nav-clock-date" id="nav-clock-date"></span>
-        </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#experience">Work</a>
-            <a href="index.html#projects">Projects</a>
-            <a href="index.html#contact">Contact</a>
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="index.html#hero" class="nav-brand-logo" aria-label="Ahmad Faisal — Home">
+                <div class="nav-af-ring"></div>
+                <div class="nav-af-inner">AF</div>
+            </a>
+            <ul class="nav-links" role="list">
+                <li><a href="index.html#skills"     data-section="skills">Skills</a></li>
+                <li><a href="index.html#experience" data-section="experience">Work</a></li>
+                <li><a href="index.html#projects"   data-section="projects">Projects</a></li>
+                <li><a href="index.html#courses"    data-section="courses">Courses</a></li>
+                <li><a href="index.html#contact"    data-section="contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="menuBtn"  aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile menu drawer -->
+    <div id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+        <a href="index.html#skills"     data-section="skills">Skills</a>
+        <a href="index.html#experience" data-section="experience">Work</a>
+        <a href="index.html#projects"   data-section="projects">Projects</a>
+        <a href="index.html#courses"    data-section="courses">Courses</a>
+        <a href="index.html#contact"    data-section="contact">Contact</a>
+    </div>
 
     <div class="page">
 
@@ -731,7 +740,7 @@
                     </div>
                 </div>
                 <div class="pg-img-wrap">
-                    <img src="./assets/Projects/Lightsek.png" alt="Lightsek" class="pg-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <img src="./instructions/Lightsek.jpg" alt="Lightsek" class="pg-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                     <div class="pg-placeholder" style="display:none"><i class="fas fa-bolt"></i></div>
                     <div class="pg-img-overlay"></div>
                 </div>
