@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Faisal — Full-Stack Developer</title>
+  <link rel="icon" href="./images/batman logo.jpeg" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/background.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <canvas id="network"></canvas>
+
+  <!-- ══ NAV ══ -->
+  <nav>
+    <a href="#hero" class="nav-brand-logo" aria-label="Ahmad Faisal — Home">
+      <div class="nav-af-ring"></div>
+      <div class="nav-af-inner">AF</div>
+    </a>
+    <div class="nav-clock">
+      <span class="nav-clock-icon"><i class="fas fa-clock"></i></span>
+      <span class="nav-clock-time" id="nav-clock-time">
+        00<span class="nav-clock-colon">:</span>00<span class="nav-clock-colon">:</span>00
+      </span>
+      <span class="nav-clock-sep">·</span>
+      <span class="nav-clock-date" id="nav-clock-date"></span>
+    </div>
+    <div class="nav-links">
+      <a href="#experience">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#courses">Courses</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-pill" id="themeBtn" aria-label="Toggle dark / light mode">
+        <span class="pill-icon pill-moon"><i class="fas fa-moon"></i></span>
+        <span class="pill-icon pill-sun"><i class="fas fa-sun"></i></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- ══ HERO ══ -->
+    <section class="hero fu" id="hero">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Available for opportunities</div>
+        <h1>Ahmad<br><em>Faisal</em></h1>
+        <p class="hero-role">// Full-Stack Developer · Competitive Programmer</p>
+        <p class="hero-bio">
+          Junior software engineer from Jordan University of Science and Technology.
+          Passionate about full-stack web development, problem-solving, and building
+          efficient, user-focused solutions. Exploring AI/ML and cloud infrastructure.
+        </p>
+
+        <!-- Education card -->
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <div class="edu-degree">B.Sc. Software Engineering</div>
+            <div class="edu-school">Jordan University of Science and Technology</div>
+          </div>
+          <div class="edu-year">2025</div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="mailto:ahmad100.fa100@gmail.com" class="btn btn-primary">
+            <i class="fas fa-envelope"></i> Get in touch
+          </a>
+          <a href="https://github.com/ahmadfa100" target="_blank" class="btn btn-ghost">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://jo.linkedin.com/in/ahmad-faisal-dev/" target="_blank" class="btn btn-ghost">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="photo-wrap">
+          <div class="photo-ring"></div>
+          <img
+            src="./images/Me.jpg"
+            alt="Ahmad Faisal"
+            class="profile-photo"
+            onerror="this.classList.add('broken')"
+          >
+          <div class="avatar-fallback">AF</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-pill"><strong>10+</strong><span>Projects</span></div>
+          <div class="stat-pill"><strong>300+</strong><span>Problems</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ AWS CERT ══ -->
+    <div class="cert-banner fu">
+      <div class="cert-aws-i"><i class="fab fa-aws"></i></div>
+      <div class="cert-body">
+        <div class="cert-name">AWS Certified Cloud Practitioner</div>
+        <div class="cert-sub">Amazon Web Services (AWS)</div>
+      </div>
+      <div class="cert-badge">Valid 2026 – 2029</div>
+    </div>
+
+    <!-- ══ SKILLS ══ -->
+    <section id="skills" class="fu">
+      <div class="sec-label">Core Skills</div>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <div class="tags">
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">React Native</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">EJS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Backend</h4>
+          <div class="tags">
+            <span class="tag expert strongest">ASP.NET</span>
+            <span class="tag expert strongest">Python</span>
+            <span class="tag expert">Node.js</span>
+            <span class="tag expert">C++</span>
+            <span class="tag">C#</span>
+            <span class="tag">Java</span>
+            <span class="tag">PHP</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Databases</h4>
+          <div class="tags">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">SQL Server</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Tools & Cloud</h4>
+          <div class="tags">
+            <span class="tag expert">AWS</span>
+            <span class="tag">Git</span>
+            <span class="tag">Docker</span>
+            <span class="tag">N8N</span>
+            <span class="tag">Postman</span>
+            <span class="tag">Linux</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ EXPERIENCE ══ -->
+    <section id="experience" class="fu">
+      <div class="sec-label">Experience</div>
+      <div class="exp-list">
+
+        <!-- Qualify You -->
+        <div class="exp-item">
+          <div class="exp-line">
+            <div class="exp-dot latest"></div>
+            <div class="exp-connector"></div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-hd">
+              <div>
+                <div class="exp-title">Full Stack ASP.NET Developer</div>
+                <a href="https://www.qualifyyou.com/" target="_blank" class="exp-company-link">
+                  <div class="exp-company-logo">
+                    <img src="./company logos/Qualify_you.svg" alt="Qualify You logo"
+                         onerror="this.parentElement.innerHTML='<i class=\'fas fa-building\' style=\'font-size:14px;color:var(--accent)\'></i>'">
+                  </div>
+                  <span class="exp-company-name">Qualify You</span>
+                  <i class="fas fa-arrow-up-right-from-square exp-company-ext"></i>
+                </a>
+              </div>
+              <div class="exp-date">Sep 2025 – Jan 2026</div>
+            </div>
+            <ul class="exp-pts">
+              <li>Participated from the earliest stages of system design for a real-time interactive web application using ASP.NET Web API and React.js.</li>
+              <li>Contributed to backend architecture, API design, and seamless frontend–backend integration.</li>
+              <li>Implemented real-time features ensuring application scalability and responsiveness.</li>
+              <li>Led the development team in the final phase, coordinating task delivery and ensuring successful project completion.</li>
+            </ul>
+            <div class="tech-row">
+              <span class="tech-tag">ASP.NET Web API</span>
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">WebSockets</span>
+              <span class="tech-tag">REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clever Mind POB -->
+        <div class="exp-item">
+          <div class="exp-line">
+            <div class="exp-dot"></div>
+            <div class="exp-connector"></div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-hd">
+              <div>
+                <div class="exp-title">Web Development Trainee</div>
+                <a href="https://www.clevermindpob.org/" target="_blank" class="exp-company-link">
+                  <div class="exp-company-logo">
+                    <img src="./company logos/Clever mind Pob logo.png" alt="Clever Mind POB logo"
+                         onerror="this.parentElement.innerHTML='<i class=\'fas fa-building\' style=\'font-size:14px;color:var(--accent)\'></i>'">
+                  </div>
+                  <span class="exp-company-name">Clever Mind POB</span>
+                  <i class="fas fa-arrow-up-right-from-square exp-company-ext"></i>
+                </a>
+              </div>
+              <div class="exp-date">Jun 2024 – Sep 2024</div>
+            </div>
+            <ul class="exp-pts">
+              <li>Developed and implemented multiple web projects, strengthening proficiency in HTML, CSS, and JavaScript.</li>
+              <li>Modified and optimized 3+ existing projects, reinforcing university-taught concepts in real-world scenarios.</li>
+              <li>Built a complete web project from scratch covering planning, design, development, and deployment.</li>
+            </ul>
+            <div class="tech-row">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTS -->
+        <div class="exp-item">
+          <div class="exp-line">
+            <div class="exp-dot"></div>
+            <div class="exp-connector" style="min-height:0;flex:0"></div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-hd">
+              <div>
+                <div class="exp-title">Volunteer / CCNA Level 1 Trainee</div>
+                <a href="https://ctsjordan.com/" target="_blank" class="exp-company-link">
+                  <div class="exp-company-logo" style="background:rgba(255,255,255,.05)">
+                    <i class="fas fa-network-wired" style="font-size:14px;color:var(--accent)"></i>
+                  </div>
+                  <span class="exp-company-name">CTS</span>
+                  <i class="fas fa-arrow-up-right-from-square exp-company-ext"></i>
+                </a>
+              </div>
+              <div class="exp-date">Jul 2022 – Oct 2022</div>
+            </div>
+            <ul class="exp-pts">
+              <li>Completed intensive CCNA Level 1 training covering OSI/TCP-IP, IP addressing, subnetting, VLANs, switching, and basic routing.</li>
+              <li>Configured and managed Cisco network devices; performed OS installation and DHCP/DNS setup.</li>
+            </ul>
+            <div class="tech-row">
+              <span class="tech-tag">Cisco</span>
+              <span class="tech-tag">Networking</span>
+              <span class="tech-tag">CCNA</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ PROJECTS ══ -->
+    <section id="projects" class="fu">
+      <div class="sec-label">Featured Projects</div>
+      <div class="projects-grid">
+
+        <!-- Lightsek — featured with real screenshot -->
+        <div class="proj-card featured">
+          <div class="proj-img-wrap">
+            <img src="./Projects/Lightsek.png" alt="Lightsek" class="proj-img"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="proj-placeholder" style="display:none"><i class="fas fa-bolt"></i></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta">
+              <div class="proj-icon"><i class="fas fa-bolt"></i></div>
+              <span class="proj-year">2025</span>
+            </div>
+            <div class="proj-title">Lightsek</div>
+            <p class="proj-desc">
+              Smart real-time task management platform centralizing team workspaces, boards, and task lifecycles.
+              Features user management, threaded comments, and instant notifications for seamless collaboration.
+            </p>
+            <div class="proj-stack">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">ASP.NET Web API</span>
+              <span class="tech-tag">Clean Architecture</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">SignalR</span>
+            </div>
+            <div class="proj-acts">
+              <a href="#" class="bx out"><i class="fab fa-github"></i> Source</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Green Bridge -->
+        <div class="proj-card">
+          <div class="proj-img-wrap">
+            <img src="./Projects/Green Bridge.png" alt="Green Bridge" class="proj-img"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="proj-placeholder" style="display:none"><i class="fas fa-leaf"></i></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta">
+              <div class="proj-icon"><i class="fas fa-leaf"></i></div>
+              <span class="proj-year">2025</span>
+            </div>
+            <div class="proj-title">Green Bridge</div>
+            <p class="proj-desc">Platform connecting landowners with farmers for sustainable agricultural partnerships, with real-time chat, contract signing, and weather-driven alerts.</p>
+            <div class="proj-stack">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">WebSockets</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+            <div class="proj-acts">
+              <a href="https://github.com/ahmadfa100/graduation-project-2" target="_blank" class="bx solid">
+                <i class="fab fa-github"></i> Source
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MedBock -->
+        <div class="proj-card">
+          <div class="proj-img-wrap">
+            <img src="./Projects/MedBook.png" alt="MedBock" class="proj-img"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="proj-placeholder" style="display:none"><i class="fas fa-hospital"></i></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta">
+              <div class="proj-icon"><i class="fas fa-hospital"></i></div>
+              <span class="proj-year">2025</span>
+            </div>
+            <div class="proj-title">MedBock</div>
+            <p class="proj-desc">Integrated scheduling platform for patients, nurses, and doctors covering appointment booking, request management, and device time allocation.</p>
+            <div class="proj-stack">
+              <span class="tech-tag">ASP.NET Core MVC</span>
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">SQL Server</span>
+            </div>
+            <div class="proj-acts">
+              <a href="#" class="bx out"><i class="fab fa-github"></i> Source</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bus Ticket -->
+        <div class="proj-card">
+          <div class="proj-img-wrap">
+            <img src="./Projects/Bus Ticket system.png" alt="Bus Ticket System" class="proj-img"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="proj-placeholder" style="display:none"><i class="fas fa-bus"></i></div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta">
+              <div class="proj-icon"><i class="fas fa-bus"></i></div>
+              <span class="proj-year">2025</span>
+            </div>
+            <div class="proj-title">Bus Ticket System</div>
+            <p class="proj-desc">Comprehensive bus ticketing platform with multi-role support, admin dashboard, fare calculation, booking management, and trip history.</p>
+            <div class="proj-stack">
+              <span class="tech-tag">Java SE</span>
+              <span class="tech-tag">JSP / Servlets</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Maven</span>
+            </div>
+            <div class="proj-acts">
+              <a href="https://github.com/ahmadfa100/Online-Bus-Ticketing-System" target="_blank" class="bx solid">
+                <i class="fab fa-github"></i> Source
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:16px;display:flex;justify-content:center;">
+        <a href="projects.html" class="btn btn-ghost">
+          <i class="fas fa-grip"></i> View all projects
+        </a>
+      </div>
+    </section>
+
+    <!-- ══ COURSES ══ -->
+    <section id="courses" class="fu">
+      <div class="sec-label">Training & Courses</div>
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-org">The Hope Int'l Edu</div>
+          <div class="course-name">ASP.NET Core MVC Development</div>
+          <div class="course-meta"><span class="course-date">2025</span><span class="course-hrs">40 hrs</span></div>
+        </div>
+        <div class="course-card">
+          <div class="course-org">Udemy</div>
+          <div class="course-name">Full-Stack Web Development Bootcamp</div>
+          <div class="course-meta"><span class="course-date">2024 – 2025</span><span class="course-hrs">61 hrs</span></div>
+        </div>
+        <div class="course-card">
+          <div class="course-org">Cisco / Skill Builder</div>
+          <div class="course-name">CCNA: Introduction to Networks</div>
+          <div class="course-meta"><span class="course-date">2025</span><span class="course-hrs">14 hrs</span></div>
+        </div>
+        <div class="course-card">
+          <div class="course-org">AWS Skill Builder</div>
+          <div class="course-name">AWS Cloud Practitioner Essentials</div>
+          <div class="course-meta"><span class="course-date">2025</span><span class="course-hrs">12 hrs</span></div>
+        </div>
+        <div class="course-card">
+          <div class="course-org">Ministry of Digital Economy</div>
+          <div class="course-name">Coach You Program</div>
+          <div class="course-meta"><span class="course-date">2025</span><span class="course-hrs">6 mo.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section id="contact" class="fu">
+      <div class="sec-label">Connect</div>
+      <div class="contact-grid">
+        <a href="mailto:ahmad100.fa100@gmail.com" class="c-link"><i class="fas fa-envelope"></i> ahmad100.fa100@gmail.com</a>
+        <a href="tel:+962798692428" class="c-link"><i class="fas fa-phone"></i> +962 79 869 2428</a>
+        <a href="https://github.com/ahmadfa100" target="_blank" class="c-link"><i class="fab fa-github"></i> ahmadfa100</a>
+        <a href="https://jo.linkedin.com/in/ahmad-faisal-dev/" target="_blank" class="c-link"><i class="fab fa-linkedin"></i> ahmad-faisal-dev</a>
+        <a href="https://leetcode.com/u/Ahmad_fa100/" target="_blank" class="c-link"><i class="fas fa-code"></i> LeetCode</a>
+        <a href="https://codeforces.com/profile/Ahmad_Faisal" target="_blank" class="c-link"><i class="fas fa-trophy"></i> Codeforces</a>
+        <a href="https://x.com/AhmadFa100" target="_blank" class="c-link"><i class="fab fa-x-twitter"></i> @AhmadFa100</a>
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer>
+      <p>© <span id="footer-year"></span> Ahmad Faisal bani Hamad</p>
+      <p>
+        <a href="projects.html">Projects</a> ·
+        <a href="light_dark.html">Theme</a>
+      </p>
+    </footer>
+
+  </div><!-- /page -->
+
+  <script src="./background.js"></script>
+</body>
+</html>

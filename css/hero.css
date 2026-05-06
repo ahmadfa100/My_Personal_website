@@ -70,7 +70,61 @@
   color: var(--text-muted);
   line-height: 1.8;
   max-width: 540px;
+  margin-bottom: 24px;
+}
+
+/* ── Education Card ───────────────── */
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  max-width: 540px;
   margin-bottom: 36px;
+  transition: transform var(--dur), border-color var(--dur);
+}
+
+.edu-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+}
+
+.edu-icon {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edu-body {
+  flex: 1;
+}
+
+.edu-degree {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.edu-school {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.edu-year {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
 }
 
 /* ── CTA buttons ──────────────────── */

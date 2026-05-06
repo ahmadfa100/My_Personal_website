@@ -218,6 +218,45 @@
   gap: 8px;
 }
 
+.tag.expert {
+  background: linear-gradient(135deg, rgba(245,158,11,.10), rgba(251,191,36,.04));
+  border: 1px solid rgba(245,158,11,.32);
+  color: #d97706;
+  padding-right: 26px;
+  font-weight: 500;
+  position: relative;
+}
+[data-theme="light"] .tag.expert { color: #92400e; }
+.tag.expert:hover { background: linear-gradient(135deg, rgba(245,158,11,.18), rgba(251,191,36,.08)); border-color: rgba(245,158,11,.55); color: #b45309; }
+
+.tag.expert::after {
+  content: '★';
+  position: absolute; right: 7px; top: 50%; transform: translateY(-50%);
+  font-size: 9px; color: #f59e0b; line-height: 1;
+  filter: drop-shadow(0 0 3px rgba(245,158,11,.6));
+}
+
+.tag.strongest {
+  background: linear-gradient(135deg, rgba(245,158,11,.18), rgba(234,179,8,.08));
+  border: 1.5px solid rgba(245,158,11,.55);
+  color: #d97706;
+  font-weight: 600;
+  padding-right: 30px;
+  box-shadow: 0 2px 12px rgba(245,158,11,.15), inset 0 0 0 1px rgba(255,215,0,.08);
+  position: relative;
+}
+[data-theme="light"] .tag.strongest { color: #78350f; box-shadow: 0 2px 12px rgba(245,158,11,.10); }
+.tag.strongest:hover { box-shadow: 0 4px 18px rgba(245,158,11,.28); border-color: rgba(245,158,11,.8); }
+
+.tag.strongest::after {
+  content: '⭐';
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  font-size: 11px; line-height: 1;
+  filter: drop-shadow(0 0 4px rgba(245,158,11,.7));
+  animation: star-pulse 2.5s ease-in-out infinite;
+}
+@keyframes star-pulse { 0%,100%{filter:drop-shadow(0 0 4px rgba(245,158,11,.7))} 50%{filter:drop-shadow(0 0 8px rgba(245,158,11,1))} }
+
 /* ══════════════════
    EDUCATION & CERTS
 ══════════════════ */
@@ -254,6 +293,47 @@
 .edu-card-meta {
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+.cert-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  max-width: 500px;
+  margin: 40px auto 0;
+  transition: border-color var(--dur), transform var(--dur);
+}
+
+.cert-banner:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.cert-aws-i {
+  color: #ff9900;
+  font-size: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-body {
+  flex: 1;
+}
+
+.cert-badge {
+  font-family: var(--font-mono);
+  font-size: 0.70rem;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
 .cert-list {
@@ -308,63 +388,14 @@
 
 #courses { background: transparent; }
 
-.courses-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-  gap: 12px;
-}
-
-.course-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px 20px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--bg-card);
-  backdrop-filter: blur(8px);
-  transition: border-color var(--dur), background var(--dur), transform var(--dur);
-}
-
-.course-item:hover {
-  border-color: var(--border-hover);
-  background: var(--bg-card-hover);
-  transform: translateY(-1px);
-}
-
-.course-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-  margin-top: 6px;
-}
-
-.course-info {}
-
-.course-name {
-  font-size: 0.88rem;
-  color: var(--text);
-  font-weight: 500;
-  margin-bottom: 4px;
-  line-height: 1.4;
-}
-
-.course-meta {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-dim);
-  letter-spacing: 0.04em;
-  display: flex;
-  gap: 10px;
-}
-
-.course-meta span {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 10px; }
+.course-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 11px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; transition: border-color var(--dur), transform var(--dur), background var(--dur); }
+.course-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+.course-org { font-family: var(--font-mono); font-size: 9.5px; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; }
+.course-name { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; transition: color var(--dur); }
+.course-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
+.course-date { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); }
+.course-hrs { background: rgba(118,228,247,.07); border: 1px solid rgba(118,228,247,.18); border-radius: 4px; padding: 2px 7px; font-family: var(--font-mono); font-size: 10px; color: #76e4f7; }
 
 /* ══════════════════
    CONTACT
@@ -396,52 +427,10 @@
   margin-bottom: 32px;
 }
 
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 18px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--bg-card);
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.88rem;
-  transition: border-color var(--dur), background var(--dur),
-              color var(--dur), transform var(--dur);
-}
-
-.contact-link:hover {
-  border-color: var(--border-hover);
-  background: var(--bg-card-hover);
-  color: var(--accent);
-  transform: translateX(4px);
-}
-
-.contact-link-icon {
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.contact-link-label {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-dim);
-  display: block;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.contact-link-value {
-  font-size: 0.88rem;
-  color: inherit;
-}
+.contact-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.c-link { display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; font-size: 12.5px; color: var(--text-muted); text-decoration: none; transition: color var(--dur), border-color var(--dur), background var(--dur), transform var(--dur); }
+.c-link i { font-size: 13px; color: var(--accent); transition: color var(--dur); display: flex; align-items: center; justify-content: center; }
+.c-link:hover { color: var(--text); border-color: var(--border-hover); background: var(--bg-card-hover); transform: translateY(-2px); }
 
 @media (max-width: 640px) {
   .contact-inner { grid-template-columns: 1fr; }
