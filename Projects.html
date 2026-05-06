@@ -218,10 +218,6 @@
       <a href="index.html#experience">Work</a>
       <a href="index.html#projects">Projects</a>
       <a href="index.html#contact">Contact</a>
-      <button class="theme-pill" id="themeBtn" aria-label="Toggle theme">
-        <span class="pill-icon pill-moon"><i class="fas fa-moon"></i></span>
-        <span class="pill-icon pill-sun"><i class="fas fa-sun"></i></span>
-      </button>
     </div>
   </nav>
 
@@ -246,35 +242,37 @@
     <!-- ══ PROJECTS GRID ══ -->
     <div class="pg-grid fu" id="pg-grid">
 
-      <!-- ① Lightsek — featured -->
-      <div class="pg-card featured" data-tags="react aspnet">
+      <!-- ② Green Bridge -->
+      <div class="pg-card" data-tags="react node">
+        <div class="pg-img-wrap">
+          <img src="./assets/Projects/GreenBridge.jpg" alt="Green Bridge" class="pg-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pg-placeholder" style="display:none"><i class="fas fa-leaf"></i></div>
+        </div>
         <div class="pg-body">
           <div class="pg-top">
-            <div class="pg-icon"><i class="fas fa-bolt"></i></div>
+            <div class="pg-icon"><i class="fas fa-leaf"></i></div>
             <span class="pg-year">2025</span>
           </div>
-          <div class="pg-title">Lightsek</div>
-          <p class="pg-desc">Smart real-time task management platform centralizing team workspaces, boards, and task lifecycles. Features user management, threaded comments, and instant notifications.</p>
+          <div class="pg-title">Green Bridge</div>
+          <p class="pg-desc">Platform connecting landowners with skilled farmers for sustainable agricultural partnerships, with real-time chat, contract signing, order management, and weather-driven alerts.</p>
           <div class="pg-features">
-            <div class="pg-feat"><i class="fas fa-layer-group"></i><span>Workspace & Board Management</span></div>
-            <div class="pg-feat"><i class="fas fa-comment-dots"></i><span>Threaded Comments</span></div>
-            <div class="pg-feat"><i class="fas fa-bell"></i><span>Real-time Notifications</span></div>
+            <div class="pg-feat"><i class="fas fa-users"></i><span>Farmer-Landowner Matching</span></div>
+            <div class="pg-feat"><i class="fas fa-file-contract"></i><span>Contract Management</span></div>
+            <div class="pg-feat"><i class="fas fa-chart-line"></i><span>Resource Optimization</span></div>
           </div>
           <div class="pg-stack">
             <span class="tech-tag">React</span>
-            <span class="tech-tag">ASP.NET Web API</span>
-            <span class="tech-tag">Clean Architecture</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">WebSockets</span>
             <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">SignalR</span>
           </div>
           <div class="pg-actions">
-            <a href="#" class="bx out"><i class="fab fa-github"></i> Source</a>
+            <a href="https://github.com/ahmadfa100/graduation-project-2" target="_blank" class="bx solid">
+              <i class="fab fa-github"></i> Source
+            </a>
           </div>
-        </div>
-        <div class="pg-img-wrap">
-          <img src="./assets/Projects/Lightsek.png" alt="Lightsek" class="pg-img"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="pg-placeholder" style="display:none"><i class="fas fa-bolt"></i></div>
         </div>
       </div>
 
@@ -311,37 +309,35 @@
         </div>
       </div>
 
-      <!-- ② Green Bridge -->
-      <div class="pg-card" data-tags="react node">
-        <div class="pg-img-wrap">
-          <img src="./assets/Projects/GreenBridge.jpg" alt="Green Bridge" class="pg-img"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="pg-placeholder" style="display:none"><i class="fas fa-leaf"></i></div>
-        </div>
+      <!-- ① Lightsek — featured -->
+      <div class="pg-card featured" data-tags="react aspnet">
         <div class="pg-body">
           <div class="pg-top">
-            <div class="pg-icon"><i class="fas fa-leaf"></i></div>
+            <div class="pg-icon"><i class="fas fa-bolt"></i></div>
             <span class="pg-year">2025</span>
           </div>
-          <div class="pg-title">Green Bridge</div>
-          <p class="pg-desc">Platform connecting landowners with skilled farmers for sustainable agricultural partnerships, with real-time chat, contract signing, order management, and weather-driven alerts.</p>
+          <div class="pg-title">Lightsek</div>
+          <p class="pg-desc">Smart real-time task management platform centralizing team workspaces, boards, and task lifecycles. Features user management, threaded comments, and instant notifications.</p>
           <div class="pg-features">
-            <div class="pg-feat"><i class="fas fa-users"></i><span>Farmer-Landowner Matching</span></div>
-            <div class="pg-feat"><i class="fas fa-file-contract"></i><span>Contract Management</span></div>
-            <div class="pg-feat"><i class="fas fa-chart-line"></i><span>Resource Optimization</span></div>
+            <div class="pg-feat"><i class="fas fa-layer-group"></i><span>Workspace & Board Management</span></div>
+            <div class="pg-feat"><i class="fas fa-comment-dots"></i><span>Threaded Comments</span></div>
+            <div class="pg-feat"><i class="fas fa-bell"></i><span>Real-time Notifications</span></div>
           </div>
           <div class="pg-stack">
             <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Express</span>
-            <span class="tech-tag">WebSockets</span>
+            <span class="tech-tag">ASP.NET Web API</span>
+            <span class="tech-tag">Clean Architecture</span>
             <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">SignalR</span>
           </div>
           <div class="pg-actions">
-            <a href="https://github.com/ahmadfa100/graduation-project-2" target="_blank" class="bx solid">
-              <i class="fab fa-github"></i> Source
-            </a>
+            <a href="#" class="bx out"><i class="fab fa-github"></i> Source</a>
           </div>
+        </div>
+        <div class="pg-img-wrap">
+          <img src="./assets/Projects/Lightsek.png" alt="Lightsek" class="pg-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="pg-placeholder" style="display:none"><i class="fas fa-bolt"></i></div>
         </div>
       </div>
 
