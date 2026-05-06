@@ -255,11 +255,13 @@ nav {
   display: flex; align-items: center; gap: 16px;
   background: linear-gradient(135deg, rgba(245,158,11,.10), rgba(251,191,36,.03));
   border: 1px solid rgba(245,158,11,.28); border-radius: 12px;
-  padding: 14px 22px; margin-bottom: 54px;
+  padding: 14px 22px; margin-bottom: 24px;
   transition: border-color .22s, transform .22s; cursor: default;
 }
 .cert-banner:hover { border-color: rgba(245,158,11,.52); transform: translateY(-2px); }
 .cert-aws-i { font-size: 28px; color: var(--orange); flex-shrink: 0; }
+.cert-nvidia-i { font-size: 28px; color: var(--orange); flex-shrink: 0; }
+.cert-pioneers-i { font-size: 28px; color: var(--orange); flex-shrink: 0; }
 .cert-body { flex: 1; }
 .cert-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); transition: color var(--tt); }
 .cert-sub { font-size: 12px; color: var(--muted); }

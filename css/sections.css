@@ -319,6 +319,8 @@
 }
 .cert-banner:hover { border-color: rgba(245,158,11,.52); transform: translateY(-2px); }
 .cert-aws-i { font-size: 28px; color: #ff9900; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.cert-nvidia-i { font-size: 28px; color: #ff9900; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.cert-pioneers-i { font-size: 28px; color: #ff9900; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
 .cert-body { flex: 1; }
 .cert-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); transition: color var(--dur); }
 .cert-sub { font-size: 12px; color: var(--text-muted); }

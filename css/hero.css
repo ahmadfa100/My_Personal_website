@@ -3,10 +3,10 @@
 ═══════════════════════════════════════ */
 
 #hero {
-  min-height: 100dvh;
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 120px;
+  padding-bottom: 60px;
   position: relative;
 }
 
@@ -292,34 +292,7 @@
   z-index: 1;
 }
 
-/* ── Scroll indicator ─────────────── */
-.hero-scroll {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
 
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; }
-  50%       { opacity: 1; }
-}
 
 /* ── Responsive ───────────────────── */
 @media (max-width: 768px) {
